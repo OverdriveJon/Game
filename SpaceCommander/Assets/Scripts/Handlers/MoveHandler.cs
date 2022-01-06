@@ -9,7 +9,7 @@ public class MoveHandler : MonoBehaviour
         Vector3 _direction;
         float _distance;
 
-        _currentPosition = new Vector3(_body.Transform.position.x, 0.0f, _body.Transform.position.z);
+        _currentPosition = _body.Transform.position;
 
         _direction = _desiredPosition - _currentPosition;
         _distance = _direction.magnitude;

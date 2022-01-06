@@ -13,7 +13,7 @@ public class RaycastBasedDesiredPositionProvider : MonoBehaviour, IRaycastPositi
 	{
 		if (Physics.Raycast(_ray, out RaycastHit _hit))
 		{
-			this._desiredPosition = new Vector3(_hit.point.x, 0.0f, _hit.point.z);
+			this._desiredPosition = _hit.point;
 
 		}
 	}
