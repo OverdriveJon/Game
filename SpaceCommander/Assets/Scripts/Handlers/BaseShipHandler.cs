@@ -23,7 +23,7 @@ public class BaseShipHandler : MonoBehaviour
 
 	private void Start()
     {
-        _desiredPosition = new Vector3(transform.position.x, 0.0f, transform.position.z);
+        _desiredPosition = transform.position;
         
     }
 
