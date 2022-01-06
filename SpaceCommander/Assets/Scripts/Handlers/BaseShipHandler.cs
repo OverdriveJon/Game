@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Ship : MonoBehaviour
+public class BaseShipHandler : MonoBehaviour
 {
     private MovableBody _thisBody;
     private IRayProvider _rayProvider;
+    private IRaycastPositionSetter _DPSetter;
     public GameObject MouseHandler;
 
 	float _speed;
@@ -15,27 +16,24 @@ public class Ship : MonoBehaviour
 	private void Awake()
 	{
         _rayProvider = MouseHandler.GetComponent<IRayProvider>();
+        _DPSetter = MouseHandler.GetComponent<IRaycastPositionSetter>();
         _speed = 70.0f;
         _thisBody = new MovableBody(transform, _speed);
 	}
 
 	private void Start()
     {
-        //
         _desiredPosition = new Vector3(transform.position.x, 0.0f, transform.position.z);
         
     }
 
 	private void Update()
     {
-        Ray _ray = _rayProvider.CreateRay();
+     
         if (Input.GetButtonDown("Fire2"))
-        { 
-            if (Physics.Raycast(_ray, out RaycastHit _hit))
-            {
-                _desiredPosition = new Vector3(_hit.point.x, 0.0f, _hit.point.z);
-
-            }
+        {
+            _DPSetter.Check(_rayProvider.CreateRay());
+            _desiredPosition = _DPSetter.GetDesiredPosition();
         }
 
         MoveHandler.Move(_thisBody, _desiredPosition, _rayProvider);
@@ -47,4 +45,5 @@ public class Ship : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_desiredPosition, 5.0f);
 	}
+	
 }

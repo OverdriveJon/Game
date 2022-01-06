@@ -9,7 +9,7 @@ public class PlanetClass : MonoBehaviour
     public float diameter;
     public Color color;
 
-    public GameObject orbit;
+    ///public GameObject orbit;
     float n;
     float randomR;
     float randomG;
@@ -31,7 +31,7 @@ public class PlanetClass : MonoBehaviour
         transform.GetComponent<Renderer>().material.SetColor("_Color", color);
         transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
 
-        orbit.transform.localScale = Vector3.one * (diameter/(diameter)+1.0f);
+        //orbit.transform.localScale = Vector3.one * (diameter/(diameter)+1.0f);
     }
 
     void Update()
