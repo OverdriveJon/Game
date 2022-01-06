@@ -7,7 +7,7 @@ public class BaseShipHandler : MonoBehaviour
 {
     private MovableBody _thisBody;
     private IRayProvider _rayProvider;
-    private IRaycastPositionSetter _DPSetter;
+    private IRaycastPosition _DPSetter;
     public GameObject MouseHandler;
 
 	float _speed;
@@ -16,7 +16,7 @@ public class BaseShipHandler : MonoBehaviour
 	private void Awake()
 	{
         _rayProvider = MouseHandler.GetComponent<IRayProvider>();
-        _DPSetter = MouseHandler.GetComponent<IRaycastPositionSetter>();
+        _DPSetter = MouseHandler.GetComponent<IRaycastPosition>();
         _speed = 70.0f;
         _thisBody = new MovableBody(transform, _speed);
 	}
