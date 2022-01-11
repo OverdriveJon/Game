@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2065079166338019620}
   - component: {fileID: 8762138803489452951}
   - component: {fileID: 4594473262017148379}
-  - component: {fileID: 7769650323088701995}
+  - component: {fileID: 2453277170281701800}
   m_Layer: 6
   m_Name: Planet
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5260549770273083735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.265076, y: 41.175407, z: -1.0602436}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 38.347443, y: 38.347443, z: 38.347443}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7769650323088701995
+--- !u!114 &2453277170281701800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,9 +105,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5260549770273083735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72738ed3b7f9d3e4e940e801952b21ad, type: 3}
+  m_Script: {fileID: 11500000, guid: ad406265eb6bc5c4fbf29df669c95491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diameter: 0
-  color: {r: 0, g: 0, b: 0, a: 0}
-  orbit: {fileID: 0}
+  _name: 
+  size: 0
